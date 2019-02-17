@@ -27,6 +27,17 @@ export default {
     handlelogin () {
       this.$http.post(`login`, this.formdata).then((res) => {
         console.log(res)
+        const {
+          data: {
+            data,
+            meta: {msg, status}
+          }
+        } = res
+        if (status === 200) {
+          console.log('login----success-----')
+        } else {
+          console.log('error----')
+        }
       })
     }
   }
