@@ -15,36 +15,36 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       formdata: {
-        username: '',
-        password: ''
+        username: "",
+        password: ""
       }
-    }
+    };
   },
   methods: {
-    async handlelogin () {
-      const res = await this.$http.post(`login`, this.formdata)
+    async handlelogin() {
+      const res = await this.$http.post(`login`, this.formdata);
 
-      console.log(res)
+      console.log(res);
       const {
         data: {
-          data: { token },
+          data,
           meta: { msg, status }
         }
-      } = res
+      } = res;
       if (status === 200) {
-        localStorage.setItem('token',token)
+        localStorage.setItem("token", data.token);
         this.$router.push({
-          name: 'home'
-        })
+          name: "home"
+        });
       } else {
-        this.$message.error(msg)
+        this.$message.error(msg);
       }
     }
   }
-}
+};
 </script>
 
 <style>
