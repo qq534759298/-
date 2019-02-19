@@ -6,7 +6,7 @@
           <img src="@/assets/logo.png" alt="图片加载失败">
         </el-col>
         <el-col :span="19" class="middle">
-          <h2>电商后台管理</h2>
+          <h2>电商后台管理系统</h2>
         </el-col>
         <el-col :span="1">
           <div class="grid-content bg-purple">
@@ -116,6 +116,7 @@ export default {
 .middle {
   text-align: center;
   line-height: 60px;
+  color: #fff;
 }
 .aside {
   background: #fff;
